@@ -1,7 +1,14 @@
 import pprint
-from variables_and_constants import initial_population
-from functions import calculate_decimal_array_from_binary_data
+from variables_and_constants import initial_binary_population
+from itertools import accumulate
+from functions import calculate_fitness_array_from_binary_data, calculate_probability_array, calculate_new_population
 
+generation = {}
 
-initial_array = initial_population
-pprint.pprint(calculate_decimal_array_from_binary_data(initial_array))
+generation['population'] = initial_binary_population
+generation['fitness_array'] = calculate_fitness_array_from_binary_data(generation['population'])
+generation['probability_array'] = calculate_probability_array(generation['fitness_array'])
+generation['cumulative_array'] = list(accumulate(generation['probability_array']))
+
+random_numbers_sequence = calculate_new_population(generation)
+pprint.pprint(random_numbers_sequence)

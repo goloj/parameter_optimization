@@ -5,7 +5,7 @@ constant1 = (12.1 - (-3)) / (2 ** 18 - 1)
 constant2 = (5.8 - 4.1) / (2 ** 15 - 1)
 
 # Initial population on binary array
-initial_population = [
+initial_binary_population = [
     '100110100000001111111010011011111',
     '111000100100110111001010100011010',
     '000010000011001000001010111011101',
@@ -27,3 +27,9 @@ initial_population = [
     '000101010011111111110000110001100',
     '101110010110011110011000101111110',
 ]
+
+# Crossover probability
+Pc = 0.25
+
+# Mutation probability
+Pm = 0.01
